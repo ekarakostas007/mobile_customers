@@ -1,31 +1,124 @@
-# mobile_customers
-Excel Project # 2 with "Commonwealth Bank" (Task 2: Data Anonymisation)
+# 📊 Data Anonymisation Pipeline  
+## Excel Project #2 — Commonwealth Bank Virtual Experience Program  
 
-Here is the background information on your task
-For CBA and InsightSpark to continue with the data science vision, the data scientists at InsightSpark need to combine customer data with the transactional data from the supermarkets.
+This project focuses on designing and implementing a privacy pipeline to anonymise sensitive customer data while preserving its analytical value for downstream data science applications.  
 
-The customer data will come from the CBA mobile app. However, we cannot provide them with the raw data until it has been suitably anonymised to protect the identity of individuals in the data set.
+As part of a simulated business engagement between Commonwealth Bank and InsightSpark, the objective was to prepare customer mobile app data for secure sharing by removing or transforming personally identifiable information (PII) and reducing the risk of linkage attacks.
 
-It is your job to design a privacy pipeline to execute on the data set. This pipeline must anonynmise the data set while preserving useful information.
+---
 
-Data privacy is crucial in preventing linkage attacks. This attack is a way of recovering personal information about people from an anonymised data set. It’s a powerful technique that can be executed with even the smallest personal information. Review the following resource for more information about linkage attacks.
+## Business Problem  
 
-Here is your task
-This task focuses on anonymising a data set of sensitive customer information. You must preserve the utility and valuable information within the dataset while anonymising any personal or sensitive information. You can complete this exercise with any tool you wish, but we recommend using Excel or a spreadsheet program of your choice. You only need to submit the anonymised data set as a CSV file for your deliverable. Should you need help, visit the Data Anonymisation links in the Resources section.
+Before customer data can be used for analytics, machine learning, or business intelligence initiatives, sensitive information must be protected.  
 
-Further details about this task are given below in an email from the team lead:
+The challenge was to anonymise the dataset in a way that:
 
-Hello,
+- Protects customer privacy
+- Prevents re-identification
+- Minimises linkage attack risks
+- Preserves useful business insights
 
-I have provided you with a data set named “mobile_customers.csv.” This contains information about customers that have signed up for the mobile app in the last three years.
+---
 
-We need you to anonymise this data to hide personal details while preserving any useful information for the data scientists at InsightSpark.
+## Dataset  
 
-Here are some examples of how you may anonymise a data set:
-You could remove columns that don’t provide helpful information for analysis (e.g., names or credit card numbers).
-You could mask any columns that can identify an individual (e.g., passport numbers or mobile numbers).
-You could categorise personal figures (e.g., age and income) into a bracket rather than a specific number.
+**Source File:** `mobile_customers.csv`
 
-First, research the different techniques available for anonymising a data set. Then, edit the data set to create an anonymised data set as a CSV file. When finished, please submit this CSV file for me to review before we share it with InsightSpark.
+The dataset contains customer records from users who signed up for the mobile app over a three-year period.
 
-Once you’ve completed your anonymisation, submit your CSV file below.
+Sensitive attributes included:
+
+- Customer names
+- Phone numbers
+- Passport numbers
+- Credit card details
+- Date of birth
+- Income information
+- Geographic data
+
+---
+
+## Project Objectives  
+
+- Research data anonymisation techniques
+- Identify direct and indirect identifiers
+- Design a privacy transformation pipeline
+- Preserve analytical usefulness
+- Export a secure anonymised dataset
+
+---
+
+## Anonymisation Techniques Applied  
+
+### 1. Column Suppression  
+Removed fields with no analytical value:
+
+- Names
+- Passport numbers
+- Credit card numbers
+
+### 2. Data Masking  
+Masked identifying information.
+
+Example:
+
+```text
+0412345678 → 04******78
+```
+
+### 3. Generalisation  
+Converted exact values into ranges.
+
+| Original | Anonymised |
+|----------|------------|
+| Age: 27 | 25–34 |
+| Income: $72,400 | $50K–$75K |
+
+### 4. Date Transformation  
+
+```text
+1998-04-15 → 1998
+```
+
+### 5. Geographic Aggregation  
+
+```text
+Sydney CBD → New South Wales
+```
+
+---
+
+## Tools Used  
+
+- Microsoft Excel
+- CSV File Processing
+- Data Validation
+- Privacy Preservation Techniques
+
+---
+
+## Skills Demonstrated  
+
+- Data Privacy
+- Data Cleaning
+- Data Transformation
+- Risk Mitigation
+- Spreadsheet Analytics
+- Business Intelligence
+
+---
+
+## Deliverables  
+
+```bash
+├── mobile_customers.csv
+├── mobile_customers_anonymised.csv
+├── anonymisation_workbook.xlsx
+└── README.md
+```
+
+---
+
+## Outcome  
+
+Successfully created an anonymised customer dataset that protects sensitive customer information while maintaining valuable analytical insights for future data science initiatives.
